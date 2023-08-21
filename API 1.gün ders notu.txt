@@ -1,0 +1,109 @@
+ /*
+        API(Application Programming Interface, Uygulama Programlama Arabirimi)
+        API : Uygulamalar arasi iletisimi saglayan bir yazilim aracidir
+        -->Sizden isteklerinizi alir
+        -->Karsi tarafa iletir
+        -->Karsidan aldigi yaniti size verir. Ve bunu birkac saniye icerisinde yapar.
+
+        Ornegin: Bilgisayardaki tum uygulamalar baska uygulamalara muhtactir. Hava durumu uygulamasi gibi...
+        Restorandaki garsona benzetebiliriz.(API) Garson siparisimizi alir mutfaga goturur. Gelen yemegi de mutfaktan alip musteriye getirir.(API de tipki boyledir)
+
+        */
+        /*
+        Kredi karti ile alisveris yapmak icin kart bilgilerini alisveris sitesine girdigimizde site bu kart bilgilerinin
+        dogrulugunu bilemez.Sorgulamak icin yetkili API devreye girer ve belirli kurallar cervesinde bilgiler bankadan kontrol
+        edilip yine API araciligiyla alisveris sitesine olumlu veya olumsuz geri donus yapilir. Ve bunu saniyeler icinde
+        cok hizli bir sekilde yapar. Burda onaylanan bilgiler kargo sirketine gonderilirken de yine API kullanilir.
+         */
+
+        /*
+        API'ler veri saklamaz. Veriyi bir yerden alir baska yere gonderir. Otobus biletlerinin satildigi genel bir
+        uygulamaya giris yaptigimizda sorgulama yapmaya basladigimiz anda API devreye girer ve baglantili oldugu firmalardan
+        gerekli bilgileri alir ve musterinin ekranina getirir. Orn: obilet.com
+         */
+
+        /*
+        Request (Bizim isteklerimiz)
+        Response (Gelen yanitlar)
+         */
+
+        //https://collectapi.com/tr/
+
+        /*
+        Her sitenin bir url'i vardir. Url'den sonra ise birtakim methodlar gelir. Methodlardan sonra ya yol gelir ya da
+        yol ile beraber parametre de gelir.
+
+         End Point :https://api.collectapi.com/health/dutyPharmacy?ilce=%C3%87ankaya&il=Ankara
+         Url : https://api.collectapi.com/health/
+         Method : dutyPharmacy
+         ***Method ile parametre arasinda ? var. Iki parametre arasinda & isareti var
+         Parametre : ilce=%C3%87ankaya&il=Ankara
+
+         API icin End Point, Method ve Parametre gerekir.
+         Sonuc olarak da gelen bir Response vardir.
+         Bize gelen response lari daha guzel sekilli bir hale getirir kullaniriz.
+         */
+
+        /*
+        Bizim asil isimiz API'lerin aldigi verileri dogru bir sekilde karsi tarafa goturup, karsi taraftan da aldigi verileri
+        dogru bir sekilde bize getiriyor mu bunu test etmektir.
+         */
+
+        /*
+        HTTP--> Hyper Text Transfer Protocol
+        Bir transfer protokoludur. Bizim pc ile diger server lar arasindaki iletisimin saglanmasi icin kullanilir.
+         */
+
+        /*
+        Url'in tamami end point'tir ==>https://www.amazon.com/Apple-iPhone-11-64GB-White/dp/B08BHKSZ5P/ref=sr_1_1?crid=3AZG[…]words=iphone&qid=1691433947&sprefix=iphone%2Caps%2C252&sr=8-1
+
+        https://www.amazon.com                                  ===> Url
+        /Apple-iPhone-11-64GB-White/dp/B08BHKSZ5P/ref=sr_1_1    ===> Yol
+        ?                                                       ====>Sorgu Sembolu
+        crid=3AZG[…]words=iphone                                ==> key = value degerleri (parametreler)
+        &                                                       ====>And Isareti
+        qid=1691433947                                          ==> key = value degerleri (parametreler)
+        &                                                       ====>And Isareti
+        sprefix=iphone%2Caps%2C252                              ==> key = value degerleri (parametreler)
+        &                                                       ====>And Isareti
+        sr=8-1
+         */
+
+        /*
+        API --> http protokollerini kullanir.Istekte bulunan kisi HTTP protokolu ile istek yaparken
+        **Bir HTTP methodu(GET,POST,PUT)
+        **Bir Endpoint kullanir (Json, Xml) ile donus yapilir
+         */
+
+        /*
+        API Testlerinin nasil yapilacagini belirten dokuman (Swagger)
+        1-Endpoint
+        2-Method
+        3-Body veya Sorgu Parametreleri
+        4-Yetki (Authorization)
+        5-Cevap (Response) 
+        Aslinda bize hersey hazir olarak gelir bizim isimiz bu gelen verileri test etmektir.
+         */
+
+        /*
+        Bir API sorgusu
+        Basarili olursa 2xx ile baslayan kodlar goruruz.
+        Basariz 4xx lu kodlar
+        Server baglanti hatasi 5xx lu kodlar
+         */
+
+        /*
+        HTTP Methodlari
+        **Get: Sunucudan ayrintilari almak icin kullanilir . Read
+        **Post : Veri tabanina yeni veri eklemek icin -Create
+        **Put : Sunucudaki kaynagi guncellemek icin -Update
+        **Patch :Sunucudaki kaynagi kismen degistirmek icin
+        **Delete : Sunucudaki kaynagi silmek icin kullanilir - Delete
+        Kisaca CRUD islemleri
+         */
+        /*
+        API Test Araclari
+        1)Postman : Genelde manuel testler yapmak icin kullanilir ama otomasyon testi kosmak icin de kullanilir.
+        2)Soap : Xml tabanli mesajlasma protokolu --> Veri alisverislerinde guvenli olmasini saglar. Bankalar kulanir
+        3)Rest : HTTP tabanlidir. Genelde Json veya Xml kullanir. Basit, hafif ve esnek kullanimi vardir
+         */

@@ -1,0 +1,3 @@
+https://collectapi.com/tr/
+
+bu sitede ücretsiz api listeleri var
