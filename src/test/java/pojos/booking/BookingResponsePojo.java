@@ -1,6 +1,7 @@
-package pojos;
+package pojos.booking;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import pojos.booking.BookingPojo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingResponsePojo {

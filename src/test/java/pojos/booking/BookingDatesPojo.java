@@ -1,4 +1,4 @@
-package pojos;
+package pojos.booking;
 
 public class BookingDatesPojo {
     private String checkin;

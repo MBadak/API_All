@@ -19,3 +19,29 @@ Hamcrest Matchers Metotları:
          // Set the expected data
          // Sent the Request and get response
          // Do Assertion
+
+
+         Ogrendigimiz Assertion Yontemleri
+
+         1) Hamcrest Matchers --> (Get03)
+         2) jsonPath() --> (Get06)
+         3) as() "Map" --> (Get09)
+         4) as() "Pojo" --> (Get12)
+         5) ObjectMapper.readValue() "Map"--> (Get13)
+         6) ObjectMapper.readValue() "Pojo"--> (Get13
+
+
+
+
+        GmiBankBackend API
+
+        https://www.gmibank.com/
+        mark_twain
+        Mark.123
+
+         https://app.swaggerhub.com/apis/yasinaniltechpro/GmiBank/0.0.1
+
+                 https://app.swaggerhub.com/apis/yasinaniltechpro/GmiBank/0.0.1 dokümanını kullanarak en az 3 "state"
+                 içeren bir "country" oluşturan bir otomasyon testi yazınız.
+                 Not : Autherization için headers'a "Authorization" = ""Bearer abc123"  şeklinde Bearer token giriniz.
+              */

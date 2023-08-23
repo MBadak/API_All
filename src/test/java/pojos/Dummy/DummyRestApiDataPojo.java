@@ -1,4 +1,4 @@
-package pojos;
+package pojos.Dummy;
 
 public class DummyRestApiDataPojo {
     private String employee_name;

@@ -1,3 +1,4 @@
+
 package base_urls;
 
 import io.restassured.builder.RequestSpecBuilder;
@@ -7,15 +8,16 @@ import org.junit.Before;
 
 import static utils.AuthenticationHerokuApp.generateToken;
 
-public class HerokuAppBaseUrl {
+public class GmiBankBaseUrl {
     protected RequestSpecification spec;
     @Before
     public void setUp(){
         spec = new RequestSpecBuilder()
-                .setBaseUri("https://restful-booker.herokuapp.com")
+                .setBaseUri("https://gmibank.com")
                 .setContentType(ContentType.JSON)
-                .addHeader("Cookie", "token="+generateToken())
+                .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXJrX3R3YWluIiwiYXV0aCI6IlJPTEVfQURNSU4sUk9MRV9NQU5BR0VSIiwiZXhwIjoxNjkyOTA1OTM2fQ.jvFhKYU7_0jWZgfp4Tm7lfcRjzy-C28YM879DInS6mmMJwFVve6rorynRpymLXHeCN_D-IqseKOHK13Ym6V8yw")
                 .build();
+
     }
 }
-// Her sorguda tekrar eden dataları buraya gireceğizrguda tekrar eden dataları buraya gireceğiz
+

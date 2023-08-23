@@ -4,9 +4,8 @@ import base_urls.DummyRestApiBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
-import pojos.DummyRestApiDataPojo;
-import pojos.DummyRestApiResponsePojo;
-import test_data.JsonPlaceHolderTestData;
+import pojos.Dummy.DummyRestApiDataPojo;
+import pojos.Dummy.DummyRestApiResponsePojo;
 
 import static io.restassured.RestAssured.given;
 import static utils.ObjectMapperUtils.convertJsonToJava;

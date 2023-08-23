@@ -1,57 +1,56 @@
-package get_requests;
+package herokuapp_smoketest;
 
 import base_urls.HerokuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.booking.BookingDatesPojo;
 import pojos.booking.BookingPojo;
+import static herokuapp_smoketest.C01_CreateBooking.bookingId;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static utils.ObjectMapperUtils.convertJsonToJava;
 
-public class Get11 extends HerokuAppBaseUrl {
-/*
-     Given
-         https://restful-booker.herokuapp.com/booking/535
-     When
-         I send GET Request to the URL
-     Then
-         Status code is 200
-     And
-         Response body is like:
+public class C02_GetBookingById extends HerokuAppBaseUrl {
+  /*
+        Given
+            https://restful-booker.herokuapp.com/booking/:id
+        When
+            Kullanici GET request gonderir
+        Then
+            Status Code = 200
+        And
+            Body:
               {
-                     "firstname": "John",
-                     "lastname": "Smith",
-                     "totalprice": 111,
-                     "depositpaid": true,
-                     "bookingdates": {
-                         "checkin": "2018-01-01",
-                         "checkout": "2019-01-01"
-                     },
-                     "additionalneeds": "Breakfast"
-                 }
-  */
+                "firstname" : "Jim",
+                "lastname" : "Brown",
+                "totalprice" : 111,
+                "depositpaid" : true,
+                "bookingdates" : {
+                    "checkin" : "2018-01-01",
+                    "checkout" : "2019-01-01"
+                },
+    "additionalneeds" : "Breakfast"
+},
+            "additionalneeds": "Breakfast"
+        }
+     */
 
     @Test
-    public void get11() {
+    public void getBookingById() {
         // Set the URL
-        spec.pathParams("first", "booking", "second", 11);
-
+        spec.pathParams("first", "booking","second", bookingId);
         // Set the expected data
         BookingDatesPojo bookingDates = new BookingDatesPojo("2018-01-01", "2019-01-01");
-        BookingPojo expectedData = new BookingPojo("John", "Smith", 111, true, bookingDates,"Breakfast");
-        System.out.println(expectedData);
-
+        BookingPojo expectedData = new BookingPojo("Jim", "Brown", 111, true, bookingDates, "Breakfast");
         // Send the request and get the response
         Response response = given(spec).when().get("{first}/{second}");
         response.prettyPrint();
 
         // Do assertion
-        BookingPojo actualData = response.as(BookingPojo.class);
-        System.out.println(actualData);
-
-
+        BookingPojo actualData = convertJsonToJava(response.asString(), BookingPojo.class);
         assertEquals(200, response.statusCode());
+
         assertEquals(expectedData.getFirstname(), actualData.getFirstname());
         assertEquals(expectedData.getLastname(), actualData.getLastname());
         assertEquals(expectedData.getTotalprice(), actualData.getTotalprice());
@@ -59,6 +58,5 @@ public class Get11 extends HerokuAppBaseUrl {
         assertEquals(bookingDates.getCheckin(), actualData.getBookingdates().getCheckin());
         assertEquals(bookingDates.getCheckout(), actualData.getBookingdates().getCheckout());
         assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
-
     }
 }

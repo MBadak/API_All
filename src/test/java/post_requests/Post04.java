@@ -3,9 +3,9 @@ package post_requests;
 import base_urls.HerokuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-import pojos.BookingResponsePojo;
-import pojos.BookingDatesPojo;
-import pojos.BookingPojo;
+import pojos.booking.BookingResponsePojo;
+import pojos.booking.BookingDatesPojo;
+import pojos.booking.BookingPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;

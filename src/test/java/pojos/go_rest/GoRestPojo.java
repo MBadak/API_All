@@ -1,4 +1,6 @@
-package pojos;
+package pojos.go_rest;
+
+import pojos.go_rest.GoRestDataPojo;
 
 public class  GoRestPojo {
     private Object meta;

@@ -1,4 +1,6 @@
-package pojos;
+package pojos.booking;
+
+import pojos.booking.BookingDatesPojo;
 
 public class BookingPojo {
     private String firstname;

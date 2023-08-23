@@ -1,4 +1,6 @@
-package pojos;
+package pojos.Dummy;
+
+import pojos.Dummy.DummyRestApiDataPojo;
 
 public class DummyRestApiResponsePojo {
     private String status;
